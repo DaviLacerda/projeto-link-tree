@@ -63,7 +63,8 @@ footer img{
 }
 
 @media (min-width: 720px){
-    .container-button input[type=button]{
+    .container-button{
         width: 680px;
+        margin: 0 auto;
     }
 }
