@@ -33,17 +33,17 @@ section.welcome img{
     background-color: #ffffff;
     display: block;
     margin: 1rem auto;
-    padding: 1em;
-    width: 90%;
+    padding: 16px;
+    width: 95%;
     height: 60px;
     box-sizing: border-box;
     border-style: none;
+    border: 2px solid #ffffff;
 }
 
 .container-button input[type=button]:hover{
     background-color:#3D3B3C;
     color: #ffffff;
-    border: 2px solid #ffffff;
     transition: 0.2s;
     cursor: pointer;
 }
@@ -54,9 +54,15 @@ section.welcome img{
 }
 
 footer img{
-    height: 24px;
+    height: 20px;
     width: auto;
     display: block;
     margin: 0 auto;
-    padding-top: 4.5rem;  
+    padding-top: 100px;
+}
+
+@media (min-width: 720px){
+    .container-button input[type=button]{
+        width: 680px;
+    }
 }
