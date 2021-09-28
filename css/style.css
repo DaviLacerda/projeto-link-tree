@@ -34,7 +34,7 @@ section.welcome img{
     display: block;
     margin: 1rem auto;
     padding: 1em;
-    width: 100%;
+    width: 90%;
     height: 60px;
     box-sizing: border-box;
     border-style: none;
@@ -44,6 +44,8 @@ section.welcome img{
     background-color:#3D3B3C;
     color: #ffffff;
     border: 2px solid #ffffff;
+    transition: 0.2s;
+    cursor: pointer;
 }
 
 .container-button a{
@@ -56,5 +58,5 @@ footer img{
     width: auto;
     display: block;
     margin: 0 auto;
-    padding-top: 6rem;
+    padding-top: 4.5rem;  
 }
