@@ -28,6 +28,33 @@ section.welcome img{
     margin: 2rem auto 0 auto;
 }
 
+header{
+    position: relative;
+}
+
+header input[type=button]{
+    font-weight: 400;
+    background-color: transparent;
+    color: #ffffff;
+    border: 1.5px inset #ffffff;
+    border-radius: 5px;
+    width: 64px;
+    position: absolute;
+    right: 0px;
+    text-align: center;
+    margin-right: 0.8rem;
+    padding:1px;
+}
+
+header input[type=button]:hover{
+    background-color: #272627;
+    cursor: pointer;
+}
+
+header a{
+    text-decoration: none;
+}
+
 .container-button input[type=button]{
     font-size: 16px;
     background-color: #ffffff;
