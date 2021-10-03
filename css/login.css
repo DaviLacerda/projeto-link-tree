@@ -25,15 +25,21 @@ body{
     box-shadow: 4px 4px 16px #000000;
 }
 
+.box-container img{
+    padding-top: 64px;
+    width: 128px;
+    border-radius: 50%;
+}
+
 .login-area{
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
     font-style: italic;
-    padding-top: 275px;
+    margin-top: 64px;
 }
 
 .username label{
-    font-size: 0.9em;
+    font-size: 0.875em;
 }
 
 .username input[type="text"]{
@@ -63,4 +69,11 @@ footer img{
     margin: 0 auto;
     padding-top: 63px;
     padding-bottom: 20px;
+}
+
+@media (min-width: 720px){
+    .box-container{
+        width: 600px;
+        height: 450px;
+    }
 }
