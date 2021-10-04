@@ -9,22 +9,29 @@
 </head>
 <body>
     <div class="box-container">
-        <img src="../images/login.jpg" alt="login-image">
-        <form class="login-area" action="">
-            <div class="username">
-                <label for="username">Username:</label>
-                <br>
-                <input type="text" name="username" id="username">
+            <img src="../images/login.jpg" alt="login-image">
+            <div class="left-720px">
+                <form class="login-area" action="">
+                    <div class="username">
+                        <label for="username">Username:</label>
+                        <br>
+                        <input type="text" name="username" id="username" autocomplete="off" placeholder="Digite seu usuário">
+                    </div>
+                    <br>
+                
+                    <div class="password">
+                        <label for="password">Password:</label>
+                        <br>
+                        <input type="text" name="password" id="password" placeholder="Digite sua senha">
+                    </div>
+                </form>
+                <div class="forget">
+                    <a href="#">Forgot your password?</a>
+                </div>
             </div>
-
-            <br>
-            
-            <div class="password">
-                <label for="password">Password:</label>
-                <br>
-                <input type="text" name="password" id="password">
+            <div class="login-button">
+                <input type="button" value="Login">
             </div>
-        </form>
     </div>
 
     <footer>
