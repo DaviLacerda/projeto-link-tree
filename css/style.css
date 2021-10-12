@@ -49,7 +49,6 @@ header input[type=button]{
 header input[type=button]:hover{
     cursor: pointer;
     text-decoration: underline;
-    transition: 5ms;
 }
 
 header a{

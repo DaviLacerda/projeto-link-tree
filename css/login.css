@@ -17,23 +17,27 @@ body{
     background-color: #fff;
     display: block;
     width: 75%;
-    height: 450px;
-    margin: 200px auto;
+    height: 600px;
+    margin: 150px auto 0;
     text-align: center;
     border-radius: 8px;
-    box-shadow: 4px 4px 16px #000000;
+    box-shadow: 1px 1px 8px #000000;
 }
 
 .box-container img{
     padding-top: 56px;
     width: 128px;
-    border-radius: 50%;
+    border-radius: 25%;
+}
+
+.box-container h2{
+    
 }
 
 .login-area{
     font-family: 'Roboto', sans-serif;
     font-style: italic;
-    margin-top: 30px;
+    margin-top: 154px;
 }
 
 .username label{
@@ -104,14 +108,14 @@ footer img{
     width: auto;
     display: block;
     margin: 0 auto;
-    padding-top: 63px;
-    padding-bottom: 20px;
+    margin-top: 163px;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 720px){
     .box-container{
         width: 600px;
-        height: 450px;
+        height: 600px;
         position: relative;
     }
     
