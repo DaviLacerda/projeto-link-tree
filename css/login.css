@@ -58,7 +58,7 @@ body{
     margin-right: 100px;
 }
 
-.password input[type="text"]{
+.password input[type="password"]{
     border: 1px solid #000000ac;
     border-radius: 3px;
     margin-left: 6px;
@@ -128,7 +128,7 @@ footer img{
         width: 75%;
     }
 
-    .password input[type="text"]{
+    .password input[type="password"]{
         width: 75%;
     }
 
