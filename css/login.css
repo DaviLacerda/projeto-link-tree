@@ -122,9 +122,6 @@ body{
 .login-button input[type="button"]:hover{
     background-color: #2ABF7A;
     cursor: pointer;
-    height: 52px;
-    width: 148px;
-    transition: 0.3s;
 }
 
 footer img{
@@ -135,11 +132,6 @@ footer img{
     margin-top: 163px;
     margin-bottom: 20px;
     transition: 0.5s;
-}
-
-footer img:hover{
-    height: 22px;
-    transition: 0.3s;
 }
 
 @media (min-width: 720px){
@@ -164,5 +156,18 @@ footer img:hover{
 
     .login-button input[type="button"]{
         text-align: center;
+    }
+}
+
+@media (min-width: 1080px){
+    .login-button input[type="button"]:hover{
+        height: 52px;
+        width: 160px;
+        transition: 0.3s;
+    }
+    
+    footer img:hover{
+        height: 22px;
+        transition: 0.3s;
     }
 }
