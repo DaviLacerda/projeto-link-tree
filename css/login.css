@@ -134,7 +134,12 @@ footer img{
     transition: 0.5s;
 }
 
-@media (min-width: 720px){
+footer img:hover{
+    transition: 0.3s;
+    filter: brightness(80%);
+}
+
+@media (min-width: 900px){
     .box-container{
         width: 600px;
         height: 600px;
@@ -159,15 +164,10 @@ footer img{
     }
 }
 
-@media (min-width: 1080px){
+@media (min-width: 1200px){
     .login-button input[type="button"]:hover{
         height: 52px;
         width: 160px;
-        transition: 0.3s;
-    }
-    
-    footer img:hover{
-        height: 22px;
         transition: 0.3s;
     }
 }
