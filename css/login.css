@@ -44,7 +44,7 @@ body{
 
 .username input[type="text"]{
     background-color: #fff;
-    border: 1px solid #000;
+    border: 1px solid #414141;
     color: #000;
     font-family: 'Roboto',sans-serif;
     border-radius: 3px;
@@ -52,13 +52,13 @@ body{
     margin-left: 6px;
     margin-top: 6px;
     outline: none;
-    transition: 0.5s;
+    transition: 0.2s;
     height: 20px;
 }
 
 .username input[type="text"]:focus{
     border: 2px solid #28BF7B;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 .password label{
@@ -69,7 +69,7 @@ body{
 
 .password input[type="password"]{
     background-color: #fff;
-    border: 1px solid #000;
+    border: 1px solid #414141;
     color: #000;
     font-family: 'Roboto',sans-serif;
     border-radius: 3px;
@@ -77,13 +77,13 @@ body{
     margin-left: 6px;
     margin-top: 6px;
     outline: none;
-    transition: 0.5s;
+    transition: 0.2s;
     height: 20px;
 }
 
 .password input[type="password"]:focus{
     border: 2px solid #28BF7B;
-    transition: 0.3s;
+    transition: 0.1s;
 }
 
 .forget{
