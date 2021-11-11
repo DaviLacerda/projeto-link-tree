@@ -28,10 +28,6 @@ section.welcome img{
     margin: 2rem auto 0 auto;
 }
 
-header{
-    position: relative;
-}
-
 header input[type=button]{
     letter-spacing: 1.2px;
     font-weight: 400;
@@ -51,19 +47,19 @@ header input[type=button]:hover{
     text-decoration: underline;
 }
 
-header a{
+header a, .container-button a{
     text-decoration: none;
 }
 
 .container-button input[type=button]{
-    font-size: 16px;
-    background-color: #ffffff;
     display: block;
     margin: 1rem auto;
-    padding: 16px;
+    font-size: 16px;
+    background-color: #ffffff;
     width: 95%;
+    max-width: 720px;
     height: 60px;
-    box-sizing: border-box;
+    padding: 16px;
     border-style: none;
     border: 2px solid #ffffff;
 }
@@ -75,23 +71,9 @@ header a{
     cursor: pointer;
 }
 
-.container-button a{
-    text-decoration: none;
-    text-align: center;
-}
-
 footer img{
     height: 20px;
-    width: auto;
     display: block;
     margin: 0 auto;
-    padding-top: 100px;
-    padding-bottom: 20px;
-}
-
-@media (min-width: 720px){
-    .container-button{
-        width: 720px;
-        margin: 0 auto;
-    }
+    padding:100px 0 20px 0;
 }

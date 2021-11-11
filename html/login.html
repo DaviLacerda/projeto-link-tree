@@ -10,8 +10,7 @@
 <body>
     <div class="box-container">
             <img src="../images/login.png" alt="login-image">
-            <div class="left-720px">
-                <form class="login-area" action="">
+                <form class="login-area" id="form">
                     <div class="username">
                         <label for="username">Username:</label>
                         <br>
@@ -24,18 +23,20 @@
                         <br>
                         <input type="password" name="password" contenteditable="true" id="password" placeholder="Digite sua senha">
                     </div>
+
+                    <div class="forget">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+
+                    <div class="login-button">
+                        <input type="submit" value="Login">
+                    </div>
                 </form>
-                <div class="forget">
-                    <a href="#">Forgot your password?</a>
-                </div>
-            </div>
-            <div class="login-button">
-                <input type="button" value="Login">
-            </div>
     </div>
 
     <footer>
         <abbr title="Voltar para a página principal"><a href="../index.html"><img src="../images/linktree-logo.png" alt="linktree-logo"></a></abbr>
     </footer>
 </body>
+<script src="../script/login.js"></script>
 </html>

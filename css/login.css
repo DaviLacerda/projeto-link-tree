@@ -37,51 +37,24 @@ body{
     margin-top: 154px;
 }
 
-.username label{
+.username label, .password label{
     font-size: 16px;
     margin-right: 100px;
     color: #000;
 }
 
-.username input[type="text"]{
-    background-color: #fff;
+.username input[type="text"], .password input[type="password"]{
+    height: 20px;
     border: 1px solid #414141;
     color: #000;
     border-radius: 3px;
     padding-left: 8px;
-    margin-left: 6px;
-    margin-top: 6px;
+    margin: 6px 0 0 6px;
     outline: none;
     transition: 0.2s;
-    height: 20px;
 }
 
-.username input[type="text"]:focus{
-    border: 2px solid #28BF7B;
-    transition: 0.1s;
-}
-
-.password label{
-    font-size: 16px;
-    margin-right: 100px;
-    color: #000;
-}
-
-.password input[type="password"]{
-    background-color: #fff;
-    border: 1px solid #414141;
-    color: #000;
-    font-family: 'Roboto',sans-serif;
-    border-radius: 3px;
-    padding-left: 8px;
-    margin-left: 6px;
-    margin-top: 6px;
-    outline: none;
-    transition: 0.2s;
-    height: 20px;
-}
-
-.password input[type="password"]:focus{
+.username input[type="text"]:focus, .password input[type="password"]:focus{
     border: 2px solid #28BF7B;
     transition: 0.1s;
 }
@@ -106,7 +79,9 @@ body{
     margin-top: 24px;
 }
 
-.login-button input[type="button"]{
+.login-button input[type="submit"]{
+    display: block;
+    margin: auto;
     height: 40px;
     width: 128px;
     border: 1px solid #000;
@@ -119,7 +94,7 @@ body{
     transition: 0.5s;
 }
 
-.login-button input[type="button"]:hover{
+.login-button input[type="submit"]:hover{
     background-color: #2ABF7A;
     cursor: pointer;
 }
@@ -139,35 +114,26 @@ footer img:hover{
     filter: brightness(80%);
 }
 
-@media (min-width: 900px){
+@media (min-width: 600px){
     .box-container{
-        width: 600px;
+        width: 75%;
+        max-width: 600px;
         height: 600px;
-        position: relative;
     }
-    
-    .left-720px{
+
+    .username, .password{
         text-align: left;
-        padding-left: 20%;
+        margin-left:20%;
     }
 
-    .username input[type="text"]{
+    .username input[type="text"], .password input[type="password"]{
         width: 75%;
-    }
-
-    .password input[type="password"]{
-        width: 75%;
-    }
-
-    .login-button input[type="button"]{
-        text-align: center;
     }
 }
 
 @media (min-width: 1200px){
-    .login-button input[type="button"]:hover{
-        height: 52px;
-        width: 160px;
+    .login-button input[type="submit"]:hover{
+        width: 20%;
         transition: 0.3s;
     }
 }
