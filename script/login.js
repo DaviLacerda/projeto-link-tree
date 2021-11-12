@@ -2,7 +2,6 @@ var button = document.getElementById('login-btn');
 
 button.addEventListener("click", (e) => {
     e.preventDefault();
-    e.stopPropagation()
 
     const userEmail = document.getElementById('email')
     const userPassword = document.getElementById('password')
@@ -10,7 +9,11 @@ button.addEventListener("click", (e) => {
     const email = userEmail.value;
     const password = userPassword.value;
 
-    if(verifyEmail(email) === false){
+    if(email.length === 0 || password.length === 0){
+        document.getElementById('alert').innerHTML = 'Preencha os campos vazios!'
+    }
+
+    else if(verifyEmail(email) === false){
         document.getElementById('alert').innerHTML = 'Email inválido!'
     }
 
