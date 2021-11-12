@@ -20,11 +20,12 @@ button.addEventListener("click", (e) => {
     }
 
     else if(verifyPassword(password) === false){
-        document.getElementById('alert').innerHTML = 'Senha incorreta!'
+        document.getElementById('alert').innerHTML = 'Senha inválida!'
     }
 
     else{
         document.getElementById('alert').innerHTML = ''
+        document.getElementById('sizePassword').innerHTML = ''
     }
 });
 
@@ -59,6 +60,7 @@ password.addEventListener('keyup',function () {
 
     if(password.value.length > 0 && password.value.length < 6){
         document.getElementById('sizePassword').innerHTML = 'Senha Fraca'
+        document.getElementById('sizePassword').style.color = '#ff0000'
     }
 
     if(password.value.length > 6 && password.value.length < 12){
@@ -68,6 +70,6 @@ password.addEventListener('keyup',function () {
 
     if(password.value.length > 12 && password.value.length < 20){
         document.getElementById('sizePassword').innerHTML = 'Senha Forte'
-        document.getElementById('sizePassword').style.color = '#008000'
+        document.getElementById('sizePassword').style.color = '#008f00'
     }
 });
