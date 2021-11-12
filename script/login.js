@@ -10,24 +10,31 @@ button.addEventListener("click", (e) => {
     const email = userEmail.value;
     const password = userPassword.value;
 
-    verifyEmail(email);
-    verifyPassword(password);
-})
+    if(verifyEmail(email) === false){
+        document.getElementById('alert').innerHTML = 'Email inválido!'
+    }
+
+    else if(verifyPassword(password) === false){
+        document.getElementById('alert').innerHTML = 'Senha incorreta!'
+    }
+
+    else{
+        document.getElementById('alert').innerHTML = ''
+    }
+});
 
 function verifyEmail(email) {
     let filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,3})$/;
 
     if(!filter.test(email)){
-        alert('Por favor, digite um email válido!\n');
         return false;
     }
-}
+};
 
 function verifyPassword (password) {
     let filter = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{6,20}$/;
 
     if(!filter.test(password)){
-        alert('Por favor, digite uma senha válida!\n');
         return false;
     }
-}
+};

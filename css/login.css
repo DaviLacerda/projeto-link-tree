@@ -31,10 +31,20 @@ body{
     border-radius: 25%;
 }
 
+#alert{
+    color: #ff0000;
+    font-size: 14px;
+    position: relative;
+    top: 60px;
+}
+
 .login-area{
     font-family: 'Roboto', sans-serif;
     font-style: italic;
-    margin-top: 154px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 100px;
 }
 
 .email label, .password label{
