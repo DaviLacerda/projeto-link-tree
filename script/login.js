@@ -26,6 +26,7 @@ button.addEventListener("click", (e) => {
     else{
         document.getElementById('alert').innerHTML = ''
         document.getElementById('sizePassword').innerHTML = ''
+        window.location.href='admin.html'
     }
 });
 
