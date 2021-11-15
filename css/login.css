@@ -18,6 +18,7 @@ body{
     background-color: #fff;
     display: block;
     width: 75%;
+    max-width: 600px;
     height: 600px;
     margin: 150px auto 0;
     text-align: center;
@@ -35,7 +36,7 @@ body{
     color: #ff0000;
     font-size: 14px;
     position: relative;
-    top: 60px;
+    top: 45px;
 }
 
 .login-area{
@@ -47,14 +48,19 @@ body{
     padding-top: 100px;
 }
 
+.email, .password{
+    text-align: left;
+    margin-left:20%;
+}
+
 .email label, .password label{
     font-size: 16px;
-    margin-right: 100px;
     color: #000;
 }
 
 .email input[type="text"], .password input[type="password"]{
     height: 20px;
+    width: 75%;
     border: 1px solid #414141;
     color: #000;
     border-radius: 3px;
@@ -71,10 +77,10 @@ body{
 
 #sizePassword{
     color: #ff0000;
+    width: 75%;
     font-size: 12px;
-    display: flex;
-    justify-content: right;
-    margin: 0.5rem 8rem 0 0;
+    text-align: right;
+    margin: 0.5rem 0 0 2.5rem;
 }
 
 .forget{
@@ -130,23 +136,6 @@ footer img{
 footer img:hover{
     transition: 0.3s;
     filter: brightness(80%);
-}
-
-@media (min-width: 600px){
-    .box-container{
-        width: 75%;
-        max-width: 600px;
-        height: 600px;
-    }
-
-    .email, .password{
-        text-align: left;
-        margin-left:20%;
-    }
-
-    .email input[type="text"], .password input[type="password"]{
-        width: 75%;
-    }
 }
 
 @media (min-width: 1200px){
