@@ -88,28 +88,19 @@ input ~ label{
 
 input:focus ~ label{
     transform: translateY(-24px);
+
     font-size: 0.8em;
     letter-spacing: 0.1em;
 }
 
-.input span.error{
-    display: flex;
-
-    padding: 0;
-
-    background-color: transparent;
-}
-
-.input span.error.active{
-    border: 1px solid var(--red);
-    padding: 0.4em;
-}
-
 #sizePassword{
-    color: #ff0000;
+    color: var(--red);
+
     width: 75%;
+
     font-size: 12px;
     text-align: right;
+
     margin: 0.5rem 0 0 2.5rem;
 }
 
