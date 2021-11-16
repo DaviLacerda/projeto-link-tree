@@ -43,7 +43,6 @@ form img{
     margin: 0 auto;
 
     width: 128px;
-    border-radius: 50%;
 }
 
 #alert{
@@ -87,7 +86,7 @@ input ~ label{
     transition: .4s;
 }
 
-input:focus ~ label, input:valid ~ label{
+input:focus ~ label{
     transform: translateY(-24px);
     font-size: 0.8em;
     letter-spacing: 0.1em;
