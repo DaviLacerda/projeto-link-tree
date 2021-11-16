@@ -1,4 +1,4 @@
-var button = document.getElementById('login-btn');
+var button = document.getElementById('loginButton');
 var password = document.getElementById('password')
 
 //button.addEventListener = ações a serem realizar ao clicar no botão de login
@@ -16,37 +16,37 @@ button.addEventListener("click", (e) => {
         document.getElementById('alert').innerHTML = 'Preencha os campos vazios!'
 
         if(email.length === 0 && password.length === 0){
-            document.getElementById('email').style.borderColor = '#ff0000'
-            document.getElementById('password').style.borderColor = '#ff0000'
+            document.getElementById('email').style.borderColor = 'var(--red)'
+            document.getElementById('password').style.borderColor = 'var(--red)'
         }
     
         else if(email.length === 0){
-            document.getElementById('email').style.borderColor = '#ff0000'
-            document.getElementById('password').style.borderColor = '#414141'
+            document.getElementById('email').style.borderColor = 'var(--red)'
+            document.getElementById('password').style.borderColor = 'var(--black)'
         }
     
         else{
-            document.getElementById('password').style.borderColor = '#ff0000'
-            document.getElementById('email').style.borderColor = '#414141'
+            document.getElementById('password').style.borderColor = 'var(--red)'
+            document.getElementById('email').style.borderColor = 'var(--black)'
         }
     }
 
     else{
         if(password.length < 6){
             document.getElementById('alert').innerHTML = 'Tamanho da senha: 6-20 caracteres!'
-            document.getElementById('password').style.borderColor = '#ff0000'
+            document.getElementById('password').style.borderColor = 'var(--red)'
         }
     
         else if(verifyEmail(email) === false){
             document.getElementById('alert').innerHTML = 'Email inválido!'
-            document.getElementById('email').style.borderColor = '#ff0000'
-            document.getElementById('password').style.borderColor = '#414141'
+            document.getElementById('email').style.borderColor = 'var(--red)'
+            document.getElementById('password').style.borderColor = 'var(--black)'
         }
     
         else if(verifyPassword(password) === false){
             document.getElementById('alert').innerHTML = 'Senha inválida!'
-            document.getElementById('password').style.borderColor = '#ff0000'
-            document.getElementById('email').style.borderColor = '#414141'
+            document.getElementById('password').style.borderColor = 'var(--red)'
+            document.getElementById('email').style.borderColor = 'var(--black)'
         }
     
         else{
@@ -88,16 +88,16 @@ password.addEventListener('keyup',function () {
 
     else if(password.value.length >= 6 && password.value.length < 10){
         document.getElementById('sizePassword').innerHTML = 'Senha Fraca'
-        document.getElementById('sizePassword').style.color = '#ff0000'
+        document.getElementById('sizePassword').style.color = 'var(--red)'
     }
 
     else if(password.value.length > 10 && password.value.length < 14){
         document.getElementById('sizePassword').innerHTML = 'Senha Moderada'
-        document.getElementById('sizePassword').style.color = '#0000ff'
+        document.getElementById('sizePassword').style.color = 'var(--blue)'
     }
 
     else if(password.value.length > 14 && password.value.length <= 20){
         document.getElementById('sizePassword').innerHTML = 'Senha forte'
-        document.getElementById('sizePassword').style.color = '#008000'
+        document.getElementById('sizePassword').style.color = 'var(--green)'
     }
 });
