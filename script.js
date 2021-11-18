@@ -136,17 +136,17 @@ function changeBg () {
     const linkColor = document.querySelectorAll('[id=link]')
     const textColor = document.querySelectorAll('[id=link]');
 
-    bgPicker.addEventListener('change', function() {
+    bgPicker.addEventListener('input', function() {
         bgColor.style.backgroundColor = bgPicker.value;
     });
 
-    linkPicker.addEventListener('change', function() {
+    linkPicker.addEventListener('input', function() {
         for(let i = 0; i < linkColor.length; i++){
             linkColor[i].style.backgroundColor = linkPicker.value;
         }
     });
 
-    textPicker.addEventListener('change', function() {
+    textPicker.addEventListener('input', function() {
         for(let i = 0; i < textColor.length; i++){
             textColor[i].style.color = textPicker.value;
             textColor[i].style.borderColor = textPicker.value;
