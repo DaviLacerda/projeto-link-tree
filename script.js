@@ -1,8 +1,11 @@
-
 // Modal script
-var modal = document.getElementById('modalContainer');
-var modalBtn = document.getElementById('formBtn');
-var closeModal = document.getElementById('closeModal');
+const modal = document.getElementById('modalContainer');
+const modalForm = document.querySelector('form');
+const modalBtn = document.getElementById('formBtn');
+const closeModal = document.getElementById('closeModal');
+
+// Login validation script
+const button = document.getElementById('loginButton');
 
 modalBtn.onclick = function() {
     modal.style.display = 'flex';
@@ -12,11 +15,12 @@ closeModal.onclick = function() {
     modal.style.display = 'none'
 }
 
-// Login validation script
-var button = document.getElementById('loginButton');
-var password = document.getElementById('password')
+window.onclick = function(event) {
+    if(event.target == modal){
+        modal.style.display = 'none';
+    }
+}
 
-//button.addEventListener = ações a serem realizar ao clicar no botão de login
 button.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -67,11 +71,13 @@ button.addEventListener("click", (e) => {
         else{
             document.getElementById('alert').innerHTML = ''
             document.getElementById('sizePassword').innerHTML = ''
-            window.location.href='https://github.com/DaviLacerda'
+            changeBg();
         }
     }
     
 });
+
+
 
 
 //verifyEmail = verifica se o email a ser inserido é válido
@@ -97,22 +103,100 @@ function verifyPassword (password) {
 };
 
 password.addEventListener('keyup',function () {
+    let sizePassword = document.getElementById('sizePassword');
+
     if(password.value.length < 6){
-        document.getElementById('sizePassword').innerHTML = ''
+        sizePassword.innerHTML = ''
     }
 
     else if(password.value.length >= 6 && password.value.length < 10){
-        document.getElementById('sizePassword').innerHTML = 'Senha Fraca'
-        document.getElementById('sizePassword').style.color = '#f00'
+        sizePassword.innerHTML = 'Senha Fraca'
+        sizePassword.style.color = '#f00'
     }
 
     else if(password.value.length > 10 && password.value.length < 14){
-        document.getElementById('sizePassword').innerHTML = 'Senha Moderada'
-        document.getElementById('sizePassword').style.color = '#00f'
+        sizePassword.innerHTML = 'Senha Moderada'
+        sizePassword.style.color = '#00f'
     }
 
     else if(password.value.length > 14 && password.value.length <= 20){
-        document.getElementById('sizePassword').innerHTML = 'Senha forte'
-        document.getElementById('sizePassword').style.color = '#080'
+        sizePassword.innerHTML = 'Senha forte'
+        sizePassword.style.color = '#080'
     }
 });
+
+function changeBg () {
+    createColorsPickers();
+    
+    const bgPicker = document.getElementById('bgPicker');
+    const linkPicker = document.getElementById('linkPicker');
+    const textPicker = document.getElementById('textPicker');
+
+    const bgColor = document.querySelector('body');
+    const linkColor = document.querySelectorAll('[id=link]')
+    const textColor = document.querySelectorAll('[id=link]');
+
+    bgPicker.addEventListener('change', function() {
+        bgColor.style.backgroundColor = bgPicker.value;
+    });
+
+    linkPicker.addEventListener('change', function() {
+        for(let i = 0; i < linkColor.length; i++){
+            linkColor[i].style.backgroundColor = linkPicker.value;
+        }
+    });
+
+    textPicker.addEventListener('change', function() {
+        for(let i = 0; i < textColor.length; i++){
+            textColor[i].style.color = textPicker.value;
+            textColor[i].style.borderColor = textPicker.value;
+        }
+    });
+}
+
+function createColorsPickers () {
+    modalForm.style.display = 'none';
+
+    const container = document.createElement('div');
+    const h1 = document.createElement('h1');
+
+    const bgText = document.createElement('p');
+    const linkText = document.createElement('p');
+    const text = document.createElement('p');
+
+    const colorPickerBg = document.createElement('input');
+    const colorPickerLink = document.createElement('input');
+    const colorPickerText = document.createElement('input');
+
+    container.classList.add('container');
+
+    h1.textContent = 'Change your colors!'
+    bgText.textContent = 'Backgroung color:'
+    linkText.textContent = 'Link color:'
+    text.textContent = 'Text and border color:'
+
+    colorPickerBg.type = 'color';
+    colorPickerBg.id = 'bgPicker'
+    colorPickerBg.classList.add('colorPicker');
+
+    colorPickerLink.type = 'color';
+    colorPickerLink.id = 'linkPicker'
+    colorPickerLink.classList.add('colorPicker');
+
+    colorPickerText.type = 'color';
+    colorPickerText.id = 'textPicker'
+    colorPickerText.classList.add('colorPicker');
+
+    modal.appendChild(container);
+    
+    container.appendChild(h1);
+
+    container.appendChild(bgText);
+    container.appendChild(colorPickerBg);
+
+    container.appendChild(linkText);
+    container.appendChild(colorPickerLink);
+
+    container.appendChild(text);
+    container.appendChild(colorPickerText);
+}
