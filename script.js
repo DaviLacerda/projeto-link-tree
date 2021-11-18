@@ -1,3 +1,18 @@
+
+// Modal script
+var modal = document.getElementById('modalContainer');
+var modalBtn = document.getElementById('formBtn');
+var closeModal = document.getElementById('closeModal');
+
+modalBtn.onclick = function() {
+    modal.style.display = 'flex';
+}
+
+closeModal.onclick = function() {
+    modal.style.display = 'none'
+}
+
+// Login validation script
 var button = document.getElementById('loginButton');
 var password = document.getElementById('password')
 
@@ -16,43 +31,43 @@ button.addEventListener("click", (e) => {
         document.getElementById('alert').innerHTML = 'Preencha os campos vazios!'
 
         if(email.length === 0 && password.length === 0){
-            document.getElementById('email').style.borderColor = 'var(--red)'
-            document.getElementById('password').style.borderColor = 'var(--red)'
+            document.getElementById('email').style.borderColor = '#f00'
+            document.getElementById('password').style.borderColor = '#f00'
         }
     
         else if(email.length === 0){
-            document.getElementById('email').style.borderColor = 'var(--red)'
-            document.getElementById('password').style.borderColor = 'var(--black)'
+            document.getElementById('email').style.borderColor = '#f00'
+            document.getElementById('password').style.borderColor = '#000'
         }
     
         else{
-            document.getElementById('password').style.borderColor = 'var(--red)'
-            document.getElementById('email').style.borderColor = 'var(--black)'
+            document.getElementById('password').style.borderColor = '#f00'
+            document.getElementById('email').style.borderColor = '#000'
         }
     }
 
     else{
         if(password.length < 6){
             document.getElementById('alert').innerHTML = 'Tamanho da senha: 6-20 caracteres!'
-            document.getElementById('password').style.borderColor = 'var(--red)'
+            document.getElementById('password').style.borderColor = '#f00'
         }
     
         else if(verifyEmail(email) === false){
             document.getElementById('alert').innerHTML = 'Email inválido!'
-            document.getElementById('email').style.borderColor = 'var(--red)'
-            document.getElementById('password').style.borderColor = 'var(--black)'
+            document.getElementById('email').style.borderColor = '#f00'
+            document.getElementById('password').style.borderColor = '#000'
         }
     
         else if(verifyPassword(password) === false){
             document.getElementById('alert').innerHTML = 'Senha inválida!'
-            document.getElementById('password').style.borderColor = 'var(--red)'
-            document.getElementById('email').style.borderColor = 'var(--black)'
+            document.getElementById('password').style.borderColor = '#f00'
+            document.getElementById('email').style.borderColor = '#000'
         }
     
         else{
             document.getElementById('alert').innerHTML = ''
             document.getElementById('sizePassword').innerHTML = ''
-            window.location.href='admin.html'
+            window.location.href='https://github.com/DaviLacerda'
         }
     }
     
@@ -88,16 +103,16 @@ password.addEventListener('keyup',function () {
 
     else if(password.value.length >= 6 && password.value.length < 10){
         document.getElementById('sizePassword').innerHTML = 'Senha Fraca'
-        document.getElementById('sizePassword').style.color = 'var(--red)'
+        document.getElementById('sizePassword').style.color = '#f00'
     }
 
     else if(password.value.length > 10 && password.value.length < 14){
         document.getElementById('sizePassword').innerHTML = 'Senha Moderada'
-        document.getElementById('sizePassword').style.color = 'var(--blue)'
+        document.getElementById('sizePassword').style.color = '#00f'
     }
 
     else if(password.value.length > 14 && password.value.length <= 20){
         document.getElementById('sizePassword').innerHTML = 'Senha forte'
-        document.getElementById('sizePassword').style.color = 'var(--green)'
+        document.getElementById('sizePassword').style.color = '#080'
     }
 });

@@ -5,17 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NewDev</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <a href="html/login.html"><input type="button" value="ADMIN"></a>
+        <button id="formBtn">LOGIN</button>
     </header>
 
     <section class="welcome">
         <img src="images/logo.png" alt="logo-new-devs">
         <h1>New Devs</h1>
     </section>
+
+    <!-- Modal test -->
+    <div class="loginModal" id="modalContainer">
+    
+        <form>
+            <span id="closeModal">&times;</span>
+            <img src="../images/login.png" alt="login-image">
+            <div id="alert"></div>
+            <div class="input">
+                <input type="email" id="email" autocomplete="on">
+                <label>Email</label>
+            </div>
+            <div class="input">
+                <input type="password" id="password" maxlength="20">
+                <label>Password</label>
+                <div id="sizePassword"></div>
+            </div>
+            <button type="submit" id="loginButton">Login</button>
+        </form>
+    
+    </div>
 
     <div class="container-button">
         <a href="https://drive.google.com/drive/folders/1U4i0iziquwNnn2uiRR7Bmb-TCtDwwEJe" target="_blank"><input type="button" value="Desafios"></a>

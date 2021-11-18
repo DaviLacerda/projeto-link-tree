@@ -1,79 +1,224 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&display=swap');
-
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'Karla', sans-serif;
-    font-weight: 600;
-    border-radius: 0;
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  font-weight: 600;
+  border-radius: 0;
 }
 
-body{
-    background-color:#3D3B3C ;
+body {
+  background-color: #3D3B3C;
 }
 
-section.welcome h1{
-    text-align: center;
-    font-size: 16px;
-    color: #ffffff;
-    margin-top: 0.9rem;
-    padding-bottom: 1.5rem;
+header button {
+  border: 1px solid #2ABF7A;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #2ABF7A;
+  position: absolute;
+  right: 48px;
+  top: 20px;
+  padding: 4px;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-section.welcome img{
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    display: block;
-    margin: 2rem auto 0 auto;
+header button:hover {
+  background-color: #2abf79a3;
+  border-color: #2abf79a3;
+  cursor: pointer;
 }
 
-header input[type=button]{
-    letter-spacing: 1.2px;
-    font-weight: 400;
-    background-color: transparent;
-    color: #ffffff;
-    border-style: none;
-    width: 64px;
-    position: absolute;
-    right: 0px;
-    text-align: center;
-    margin-right: 0.8rem;
-    padding:1px;
+section.welcome h1 {
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  margin-top: 0.9rem;
+  padding-bottom: 1.5rem;
 }
 
-header input[type=button]:hover{
-    cursor: pointer;
-    text-decoration: underline;
+section.welcome img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  display: block;
+  margin: 2rem auto 0 auto;
 }
 
-header a, .container-button a{
-    text-decoration: none;
+.loginModal {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.container-button input[type=button]{
-    display: block;
-    margin: 1rem auto;
-    font-size: 16px;
-    background-color: #ffffff;
-    width: 95%;
-    max-width: 720px;
-    height: 60px;
-    padding: 16px;
-    border-style: none;
-    border: 2px solid #ffffff;
+.loginModal span {
+  color: #aaaaaa;
+  text-align: right;
+  font-size: 28px;
+  font-weight: bold;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
-.container-button input[type=button]:hover{
-    background-color:#3D3B3C;
-    color: #ffffff;
-    transition: 0.2s;
-    cursor: pointer;
+.loginModal span:hover, .loginModal span:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
-footer img{
-    height: 20px;
-    display: block;
-    margin: 0 auto;
-    padding:100px 0 20px 0;
+.loginModal form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 75%;
+  max-width: 500px;
+  margin: 240px auto;
+  padding: 32px 64px;
+  background-color: #fff;
 }
+
+.loginModal form img {
+  display: block;
+  margin: 0 auto;
+  width: 128px;
+}
+
+.loginModal #alert {
+  margin: 16px 0;
+  text-align: center;
+  color: #f00;
+  -webkit-transition: .2s ease-in;
+  transition: .2s ease-in;
+}
+
+.loginModal .input {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.loginModal input, .loginModal button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 16px 0;
+  border: none;
+  border-bottom: 1px solid #000;
+  background-color: transparent;
+  outline: none;
+  color: #000;
+  font-size: 1em;
+}
+
+.loginModal input ~ label {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  color: #000;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.loginModal input:focus ~ label {
+  -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+  font-size: 0.8em;
+  letter-spacing: 0.1em;
+}
+
+.loginModal #sizePassword {
+  color: #f00;
+  width: 75%;
+  font-size: 12px;
+  text-align: right;
+  margin: 0.5rem 0 0 2.5rem;
+}
+
+.loginModal button {
+  display: block;
+  margin: 0 auto;
+  font-family: 'Karla', sans-serif;
+  height: 40px;
+  width: 128px;
+  border: 1px solid #000;
+  background-color: #2ABF7A;
+  padding: 8px;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.loginModal button:hover {
+  -webkit-filter: brightness(90%);
+          filter: brightness(90%);
+  cursor: pointer;
+}
+
+header input[type=button] {
+  letter-spacing: 1.2px;
+  font-weight: 400;
+  background-color: transparent;
+  color: #fff;
+  border-style: none;
+  width: 64px;
+  position: absolute;
+  right: 0px;
+  text-align: center;
+  margin-right: 0.8rem;
+  padding: 1px;
+}
+
+header input[type=button]:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+header a, .container-button a {
+  text-decoration: none;
+}
+
+.container-button input[type=button] {
+  display: block;
+  margin: 1rem auto;
+  font-size: 16px;
+  background-color: #fff;
+  width: 95%;
+  max-width: 720px;
+  height: 60px;
+  padding: 16px;
+  border-style: none;
+  border: 2px solid #fff;
+}
+
+.container-button input[type=button]:hover {
+  background-color: #3D3B3C;
+  color: #fff;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+footer img {
+  height: 20px;
+  display: block;
+  margin: 0 auto;
+  padding: 100px 0 20px 0;
+}
+/*# sourceMappingURL=style.css.map */
