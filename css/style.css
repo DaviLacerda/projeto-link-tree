@@ -68,7 +68,8 @@ section.welcome img {
 
 .loginModal span {
   color: #aaaaaa;
-  text-align: right;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   font-size: 28px;
   font-weight: bold;
   -webkit-transition: .4s;

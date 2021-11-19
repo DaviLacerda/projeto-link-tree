@@ -24,57 +24,53 @@ window.onclick = function(event) {
 button.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const userEmail = document.getElementById('email')
-    const userPassword = document.getElementById('password')
-
-    const email = userEmail.value;
-    const password = userPassword.value;
-
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const alert = document.getElementById('alert');
     
-    if(email.length === 0 || password.length === 0){
-        document.getElementById('alert').innerHTML = 'Preencha os campos vazios!'
+    if(email.value.length === 0 || password.value.length === 0){
+        alert.innerHTML = 'Preencha os campos vazios!'
 
-        if(email.length === 0 && password.length === 0){
-            document.getElementById('email').style.borderColor = '#f00'
-            document.getElementById('password').style.borderColor = '#f00'
+        if(email.value.length === 0 && password.value.length === 0){
+            email.style.borderColor = '#f00'
+            password.style.borderColor = '#f00'
         }
     
-        else if(email.length === 0){
-            document.getElementById('email').style.borderColor = '#f00'
-            document.getElementById('password').style.borderColor = '#000'
+        else if(email.value.length === 0){
+            email.style.borderColor = '#f00'
+            password.style.borderColor = '#000'
         }
     
         else{
-            document.getElementById('password').style.borderColor = '#f00'
-            document.getElementById('email').style.borderColor = '#000'
+            password.style.borderColor = '#f00'
+            email.style.borderColor = '#000'
         }
     }
 
     else{
-        if(password.length < 6){
-            document.getElementById('alert').innerHTML = 'Tamanho da senha: 6-20 caracteres!'
-            document.getElementById('password').style.borderColor = '#f00'
+        if(password.value.length < 6){
+            alert.innerHTML = 'Tamanho da senha: 6-20 caracteres!'
+            password.style.borderColor = '#f00'
         }
     
-        else if(verifyEmail(email) === false){
-            document.getElementById('alert').innerHTML = 'Email inválido!'
-            document.getElementById('email').style.borderColor = '#f00'
-            document.getElementById('password').style.borderColor = '#000'
+        else if(verifyEmail(email.value) === false){
+            alert.innerHTML = 'Email inválido!'
+            email.style.borderColor = '#f00'
+            password.style.borderColor = '#000'
         }
     
-        else if(verifyPassword(password) === false){
-            document.getElementById('alert').innerHTML = 'Senha inválida!'
-            document.getElementById('password').style.borderColor = '#f00'
-            document.getElementById('email').style.borderColor = '#000'
+        else if(verifyPassword(password.value) === false){
+            alert.innerHTML = 'Senha inválida!'
+            password.style.borderColor = '#f00'
+            email.style.borderColor = '#000'
         }
     
         else{
-            document.getElementById('alert').innerHTML = ''
+            alert.innerHTML = ''
             document.getElementById('sizePassword').innerHTML = ''
             changeBg();
         }
     }
-    
 });
 
 
@@ -158,6 +154,7 @@ function createColorsPickers () {
     modalForm.style.display = 'none';
 
     const container = document.createElement('div');
+    const span = document.createElement('span');
     const h1 = document.createElement('h1');
 
     const bgText = document.createElement('p');
@@ -170,10 +167,13 @@ function createColorsPickers () {
 
     container.classList.add('container');
 
-    h1.textContent = 'Change your colors!'
-    bgText.textContent = 'Backgroung color:'
-    linkText.textContent = 'Link color:'
-    text.textContent = 'Text and border color:'
+    h1.innerHTML = 'Change your colors!'
+    span.innerHTML = '&times;'
+    bgText.innerHTML = 'Backgroung color:'
+    linkText.innerHTML = 'Link color:'
+    text.innerHTML = 'Text and border color:'
+
+    span.id = 'closeModal';
 
     colorPickerBg.type = 'color';
     colorPickerBg.id = 'bgPicker'
@@ -189,6 +189,7 @@ function createColorsPickers () {
 
     modal.appendChild(container);
     
+    container.appendChild(span);
     container.appendChild(h1);
 
     container.appendChild(bgText);
