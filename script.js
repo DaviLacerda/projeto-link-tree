@@ -68,7 +68,7 @@ button.addEventListener("click", (e) => {
         else{
             alert.innerHTML = ''
             document.getElementById('sizePassword').innerHTML = ''
-            changeBg();
+            changeElements();
         }
     }
 });
@@ -121,7 +121,7 @@ password.addEventListener('keyup',function () {
     }
 });
 
-function changeBg () {
+function changeElements () {
     createColorsPickers();
     
     const bgPicker = document.getElementById('bgPicker');
@@ -153,6 +153,7 @@ function changeBg () {
 function createColorsPickers () {
     modalForm.style.display = 'none';
 
+    // create the HTML tags
     const container = document.createElement('div');
     const span = document.createElement('span');
     const h1 = document.createElement('h1');
@@ -165,15 +166,20 @@ function createColorsPickers () {
     const colorPickerLink = document.createElement('input');
     const colorPickerText = document.createElement('input');
 
-    container.classList.add('container');
-
+    // changing the tags content
     h1.innerHTML = 'Change your colors!'
     span.innerHTML = '&times;'
     bgText.innerHTML = 'Backgroung color:'
     linkText.innerHTML = 'Link color:'
     text.innerHTML = 'Text and border color:'
 
+    // add the id and class tags (for CSS)
+    container.classList.add('container');
+
     span.id = 'closeModal';
+    span.onclick = function() {
+        modal.style.display = 'none'
+    }
 
     colorPickerBg.type = 'color';
     colorPickerBg.id = 'bgPicker'
@@ -187,6 +193,7 @@ function createColorsPickers () {
     colorPickerText.id = 'textPicker'
     colorPickerText.classList.add('colorPicker');
 
+    // append all these tags to the HTML (modal)
     modal.appendChild(container);
     
     container.appendChild(span);
