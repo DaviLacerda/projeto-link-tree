@@ -5,8 +5,9 @@ const modalBtn = document.getElementById('formBtn');
 const closeModal = document.getElementById('closeModal');
 
 // Login validation script
-const button = document.getElementById('loginButton');
+const loginButton = document.getElementById('loginButton');
 
+// Events
 modalBtn.onclick = function() {
     modal.style.display = 'flex';
 }
@@ -21,9 +22,18 @@ window.onclick = function(event) {
     }
 }
 
-button.addEventListener("click", (e) => {
+loginButton.addEventListener("click", (e) => {
     e.preventDefault();
+    formValidation();
+});
 
+password.addEventListener('keyup',function () {
+    dynamicSizePassword();
+});
+
+// Functions
+
+function formValidation() {
     const email = document.getElementById('email');
     const password = document.getElementById('password');
     const alert = document.getElementById('alert');
@@ -71,9 +81,7 @@ button.addEventListener("click", (e) => {
             changeElements();
         }
     }
-});
-
-
+}
 
 
 //verifyEmail = verifica se o email a ser inserido é válido
@@ -98,7 +106,9 @@ function verifyPassword (password) {
     }
 };
 
-password.addEventListener('keyup',function () {
+
+
+function dynamicSizePassword() {
     let sizePassword = document.getElementById('sizePassword');
 
     if(password.value.length < 6){
@@ -119,10 +129,10 @@ password.addEventListener('keyup',function () {
         sizePassword.innerHTML = 'Senha forte'
         sizePassword.style.color = '#080'
     }
-});
+}
 
 function changeElements () {
-    createColorsPickers();
+    createColorModal();
     
     const bgPicker = document.getElementById('bgPicker');
     const linkPicker = document.getElementById('linkPicker');
@@ -150,28 +160,17 @@ function changeElements () {
     });
 }
 
-function createColorsPickers () {
+function createColorModal() {
     modalForm.style.display = 'none';
 
     // create the HTML tags
     const container = document.createElement('div');
-    const span = document.createElement('span');
-    const h1 = document.createElement('h1');
 
-    const bgText = document.createElement('p');
-    const linkText = document.createElement('p');
-    const text = document.createElement('p');
-
-    const colorPickerBg = document.createElement('input');
-    const colorPickerLink = document.createElement('input');
-    const colorPickerText = document.createElement('input');
-
-    // changing the tags content
-    h1.innerHTML = 'Change your colors!'
-    span.innerHTML = '&times;'
-    bgText.innerHTML = 'Backgroung color:'
-    linkText.innerHTML = 'Link color:'
-    text.innerHTML = 'Text and border color:'
+    const h1 = createTagsText('h1', 'Change your colors!');
+    const span = createTagsText('span', '&times;')
+    const bgText = createTagsText('p', 'Background color:')
+    const linkText = createTagsText('p', 'Link color:')
+    const text = createTagsText('p', 'Text and border color:')
 
     // add the id and class tags (for CSS)
     container.classList.add('container');
@@ -181,30 +180,37 @@ function createColorsPickers () {
         modal.style.display = 'none'
     }
 
-    colorPickerBg.type = 'color';
-    colorPickerBg.id = 'bgPicker'
-    colorPickerBg.classList.add('colorPicker');
-
-    colorPickerLink.type = 'color';
-    colorPickerLink.id = 'linkPicker'
-    colorPickerLink.classList.add('colorPicker');
-
-    colorPickerText.type = 'color';
-    colorPickerText.id = 'textPicker'
-    colorPickerText.classList.add('colorPicker');
+    const colorPickerBg = createColorPicker('input', 'color', 'bgPicker', 'colorPicker');
+    const colorPickerLink = createColorPicker('input', 'color', 'linkPicker', 'colorPicker');
+    const colorPickerText = createColorPicker('input', 'color', 'textPicker', 'colorPicker');
 
     // append all these tags to the HTML (modal)
     modal.appendChild(container);
-    
-    container.appendChild(span);
-    container.appendChild(h1);
 
-    container.appendChild(bgText);
-    container.appendChild(colorPickerBg);
+    appendElementsToHTML(container, [span, h1, bgText, colorPickerBg, linkText, colorPickerLink, text, colorPickerText]);
+}
 
-    container.appendChild(linkText);
-    container.appendChild(colorPickerLink);
+//create ColorPicker -> tag(HTML Tag), type(type of input), id(HTML id), classList(to attribute a div.class)
+function createColorPicker(tag, type,id,classList) {
+    const colorPicker = document.createElement(tag);
+    colorPicker.type = type;
+    colorPicker.id = id;
+    colorPicker.classList.add(classList);
 
-    container.appendChild(text);
-    container.appendChild(colorPickerText);
+    return colorPicker;
+}
+
+//create tags where need a HTML content
+function createTagsText (tag, text) {
+    const content = document.createElement(tag);
+    content.innerHTML = text;
+
+    return content;
+}
+
+//append 'b' elements to 'a' in HTML
+function appendElementsToHTML(a, b) {
+    for (let i = 0; i < b.length; i++){
+        a.appendChild(b[i]);
+    }
 }
