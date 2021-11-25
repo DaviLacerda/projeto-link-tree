@@ -139,8 +139,8 @@ function changeElements () {
     const textPicker = document.getElementById('textPicker');
 
     const bgColor = document.querySelector('body');
-    const linkColor = document.querySelectorAll('[id=link]')
-    const textColor = document.querySelectorAll('[id=link]');
+    const linkColor = document.querySelectorAll('[class=link]')
+    const textColor = document.querySelectorAll('[class=link]');
 
     bgPicker.addEventListener('input', function() {
         bgColor.style.backgroundColor = bgPicker.value;
