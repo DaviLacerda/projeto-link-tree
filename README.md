@@ -7,8 +7,21 @@
 ## Performance (Using Lighthouse Tool)
 
 * To measure the performance, i used Lighthouse Developer Tool, here is the result in mobile:
-* ![Mobile Performance Image](#)
+![Mobile Performance Image](https://github.com/DaviLacerda/projeto-link-tree/blob/main/readme%20images/mobile-performance.png)
 <br>
 
 * And here, the desktop results:
-* ![Desktop Performance Image](#)
+![Desktop Performance Image](https://github.com/DaviLacerda/projeto-link-tree/blob/main/readme%20images/desktop-performance.png)
+
+* A sneakpeek about my project:
+
+* Homepage:
+![Homepage](https://github.com/DaviLacerda/projeto-link-tree/blob/main/readme%20images/home.png)
+<br>
+
+* Login Modal:
+![Login](https://github.com/DaviLacerda/projeto-link-tree/blob/main/readme%20images/login.png)
+<br>
+
+* Change the website colors (modal):
+![Change colors](https://github.com/DaviLacerda/projeto-link-tree/blob/main/readme%20images/colors.png)
