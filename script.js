@@ -1,8 +1,9 @@
 // Modal script
 const modal = document.getElementById('modalContainer');
 const modalForm = document.querySelector('form');
-const modalBtn = document.getElementById('formBtn');
+const modalBtn = document.getElementById('modalBtn');
 const closeModal = document.getElementById('closeModal');
+const title = document.getElementById('title');
 
 // Login validation script
 const loginButton = document.getElementById('loginButton');
@@ -106,8 +107,6 @@ function verifyPassword (password) {
     }
 };
 
-
-
 function dynamicSizePassword() {
     let sizePassword = document.getElementById('sizePassword');
 
@@ -134,29 +133,42 @@ function dynamicSizePassword() {
 function changeElements () {
     createColorModal();
     
+    const filePicker = document.getElementById('filePicker');
     const bgPicker = document.getElementById('bgPicker');
     const linkPicker = document.getElementById('linkPicker');
     const textPicker = document.getElementById('textPicker');
-
+    
+    const image = document.getElementById('main-image')
     const bgColor = document.querySelector('body');
     const linkColor = document.querySelectorAll('[class=link]')
     const textColor = document.querySelectorAll('[class=link]');
 
-    bgPicker.addEventListener('input', function() {
-        bgColor.style.backgroundColor = bgPicker.value;
-    });
-
-    linkPicker.addEventListener('input', function() {
-        for(let i = 0; i < linkColor.length; i++){
-            linkColor[i].style.backgroundColor = linkPicker.value;
+    filePicker.addEventListener('change', () => {
+        const [fileInput] = filePicker.files;
+        if(fileInput){
+            image.src = URL.createObjectURL(fileInput)
         }
     });
 
-    textPicker.addEventListener('input', function() {
+    bgPicker.addEventListener('input', () => {
+        bgColor.style.backgroundColor = bgPicker.value;
+    });
+
+    linkPicker.addEventListener('input', () => {
+        for(let i = 0; i < linkColor.length; i++){
+            linkColor[i].style.backgroundColor = linkPicker.value;
+        }
+        modalBtn.style.backgroundColor = linkPicker.value;
+    });
+
+    textPicker.addEventListener('input', () => {
         for(let i = 0; i < textColor.length; i++){
             textColor[i].style.color = textPicker.value;
             textColor[i].style.borderColor = textPicker.value;
         }
+        title.style.color = textPicker.value;
+        modalBtn.style.color = textPicker.value;
+        modalBtn.style.borderColor = textPicker.value;
     });
 }
 
@@ -166,10 +178,11 @@ function createColorModal() {
     // create the HTML tags
     const container = document.createElement('div');
 
-    const h1 = createTagsText('h1', 'Change your colors!');
+    const h1 = createTagsText('h1', 'Change the website!');
     const span = createTagsText('span', '&times;')
+    const imageText = createTagsText('p', 'Change the image:');
     const bgText = createTagsText('p', 'Background color:')
-    const linkText = createTagsText('p', 'Link color:')
+    const linkText = createTagsText('p', 'Button color:')
     const text = createTagsText('p', 'Text and border color:')
 
     // add the id and class tags (for CSS)
@@ -180,19 +193,24 @@ function createColorModal() {
         modal.style.display = 'none'
     }
 
-    const colorPickerBg = createColorPicker('input', 'color', 'bgPicker', 'colorPicker');
-    const colorPickerLink = createColorPicker('input', 'color', 'linkPicker', 'colorPicker');
-    const colorPickerText = createColorPicker('input', 'color', 'textPicker', 'colorPicker');
+    //file picker
+    const changeImage = createInput('file', 'filePicker', 'filePicker');
+    changeImage.accept = 'image/png, image/jpeg'
+
+    // colors pickers
+    const colorPickerBg = createInput('color', 'bgPicker', 'colorPicker');
+    const colorPickerLink = createInput('color', 'linkPicker', 'colorPicker');
+    const colorPickerText = createInput('color', 'textPicker', 'colorPicker');
 
     // append all these tags to the HTML (modal)
     modal.appendChild(container);
 
-    appendElementsToHTML(container, [span, h1, bgText, colorPickerBg, linkText, colorPickerLink, text, colorPickerText]);
+    appendElementsToHTML(container, [span, h1, imageText, changeImage, bgText, colorPickerBg, linkText, colorPickerLink, text, colorPickerText]);
 }
 
 //create ColorPicker -> tag(HTML Tag), type(type of input), id(HTML id), classList(to attribute a div.class)
-function createColorPicker(tag, type,id,classList) {
-    const colorPicker = document.createElement(tag);
+function createInput(type,id,classList) {
+    const colorPicker = document.createElement('input');
     colorPicker.type = type;
     colorPicker.id = id;
     colorPicker.classList.add(classList);
@@ -213,4 +231,8 @@ function appendElementsToHTML(a, b) {
     for (let i = 0; i < b.length; i++){
         a.appendChild(b[i]);
     }
+}
+
+function changeImage() {
+    
 }
