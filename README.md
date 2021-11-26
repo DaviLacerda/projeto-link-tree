@@ -1,6 +1,6 @@
 # LinkTree
 
-* GitHub Pages Link -> https://davilacerda.github.io/projeto-link-tree/
+* GitHub Pages Link -> [click here](https://davilacerda.github.io/projeto-link-tree/{rel="noopener"})
 
 * This project is a clone of website [LinkTree](https://linktr.ee/newdevs). The linktree "inspiration" is about a study group, where i learned more about web development together with the university.
 
