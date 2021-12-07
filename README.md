@@ -23,9 +23,9 @@
 ![Homepage](https://github.com/DaviLacerda/projeto-link-tree/blob/main/readme%20images/home.png)
 <br>
 
-* Login Modal:
+* Login Modal GIF:
 ![Login](https://github.com/DaviLacerda/projeto-link-tree/blob/main/readme%20images/login.png)
 <br>
 
-* Change the website colors (modal):
-![Change colors](https://github.com/DaviLacerda/projeto-link-tree/blob/main/readme%20images/colors.png)
+* Change the website:
+![Change website](https://github.com/DaviLacerda/projeto-link-tree/blob/main/readme%20images/colors.png)
