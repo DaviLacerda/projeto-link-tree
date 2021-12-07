@@ -11,6 +11,7 @@
 
     <!-- Favicon, CSS and JS -->
     <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/color/50/000000/linktree.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="script.js" defer></script>
 </head>
@@ -33,11 +34,12 @@
             <div id="alert"></div>
             <div class="input">
                 <input type="email" id="email" autocomplete="on">
-                <label>Email</label>
+                <label id="email-label">Email</label>
             </div>
             <div class="input">
                 <input type="password" id="password" maxlength="20">
-                <label>Password</label>
+                <i class="far fa-eye" id="togglePassword"></i>
+                <label id="password-label">Password</label>
                 <div id="sizePassword"></div>
             </div>
             <button type="submit" id="loginButton">Login</button>

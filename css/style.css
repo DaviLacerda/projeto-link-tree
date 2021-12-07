@@ -160,6 +160,21 @@ section.welcome img {
 .loginModal .input {
   margin-bottom: 24px;
   position: relative;
+  height: auto;
+}
+
+.loginModal .input i {
+  position: absolute;
+  top: 30%;
+  right: 0;
+}
+
+.loginModal .input i:hover {
+  cursor: pointer;
+}
+
+.loginModal input::-ms-reveal, .loginModal input::-ms-clear {
+  display: none;
 }
 
 .loginModal #email, .loginModal #password, .loginModal button {
@@ -186,8 +201,6 @@ section.welcome img {
 }
 
 .loginModal input:focus ~ label {
-  -webkit-transform: translateY(-24px);
-          transform: translateY(-24px);
   font-size: 0.8em;
   letter-spacing: 0.1em;
 }

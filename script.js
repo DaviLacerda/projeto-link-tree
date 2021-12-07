@@ -4,6 +4,7 @@ const modalForm = document.querySelector('form');
 const modalBtn = document.getElementById('modalBtn');
 const closeModal = document.getElementById('closeModal');
 const title = document.getElementById('title');
+const togglePassword = document.getElementById('togglePassword');
 
 // Login validation script
 const loginButton = document.getElementById('loginButton');
@@ -29,7 +30,22 @@ loginButton.addEventListener("click", (e) => {
 });
 
 password.addEventListener('keyup',function () {
+    transformLabel(password, 'password-label');
     dynamicSizePassword();
+});
+
+email.addEventListener('keyup', () => {
+    transformLabel(email, 'email-label')
+})
+
+togglePassword.addEventListener('click', () => {
+    togglePassword.classList.toggle('fa-eye-slash');
+    if(password.type === 'password'){
+        password.type = 'text';
+    }
+    else{
+        password.type = 'password'
+    }
 });
 
 // Functions
@@ -144,10 +160,7 @@ function changeElements () {
     const textColor = document.querySelectorAll('[class=link]');
 
     filePicker.addEventListener('change', () => {
-        const [fileInput] = filePicker.files;
-        if(fileInput){
-            image.src = URL.createObjectURL(fileInput)
-        }
+        changeMainImage(image);
     });
 
     bgPicker.addEventListener('input', () => {
@@ -233,6 +246,30 @@ function appendElementsToHTML(a, b) {
     }
 }
 
-function changeImage() {
-    
+function changeMainImage(image) {
+    const [fileInput] = filePicker.files;
+    if(fileInput){
+        let url = URL.createObjectURL(fileInput);
+        var img = new Image;
+      
+        img.onload = function() {
+            if(img.width <= 256 && img.height <= 256){
+                image.src = url;
+            }
+            else{
+                alert('Only images smaller than 256x256 are accepted!')
+            }
+        };
+        img.src = url;
+    }
+}
+
+function transformLabel(input ,param) {
+    let label = document.getElementById(param);
+    if(input.value !== ''){
+        label.style.transform = 'translateY(-24px)';
+    }
+    else{
+        label.style.transform = 'translateY(0px)';
+    }
 }

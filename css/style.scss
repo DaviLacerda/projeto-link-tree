@@ -159,6 +159,21 @@ section.welcome img{
     .input{
         margin-bottom: 24px;
         position: relative;
+        height: auto;
+    }
+
+    .input i{
+        position: absolute;
+        top: 30%;
+        right: 0;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    input::-ms-reveal, input::-ms-clear {
+        display: none;
     }
     
     #email, #password, button{
@@ -192,8 +207,6 @@ section.welcome img{
     }
     
     input:focus ~ label{
-        transform: translateY(-24px);
-    
         font-size: 0.8em;
         letter-spacing: 0.1em;
     }
