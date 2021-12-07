@@ -253,11 +253,11 @@ function changeMainImage(image) {
         var img = new Image;
       
         img.onload = function() {
-            if(img.width <= 256 && img.height <= 256){
+            if(img.width <= 512 && img.height <= 512){
                 image.src = url;
             }
             else{
-                alert('Only images smaller than 256x256 are accepted!')
+                alert('Only images smaller than 512x512 are accepted!')
             }
         };
         img.src = url;
