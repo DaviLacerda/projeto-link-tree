@@ -30,6 +30,10 @@ loginButton.addEventListener("click", (e) => {
 });
 
 password.addEventListener('keyup',function () {
+    if(togglePassword.style.display === ''){
+        togglePassword.style.display = 'block'
+    }
+
     transformLabel(password, 'password-label');
     dynamicSizePassword();
 });
